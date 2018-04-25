@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 4793403648955324}
   m_Layer: 0
   m_Name: MCU45
-  m_TagString: Untagged
+  m_TagString: RightHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -397,6 +397,7 @@ GameObject:
   - component: {fileID: 95153749792701178}
   - component: {fileID: 114665989743828818}
   - component: {fileID: 114184456833210974}
+  - component: {fileID: 114684090788033526}
   m_Layer: 0
   m_Name: SmartsuitActor
   m_TagString: Untagged
@@ -624,7 +625,7 @@ GameObject:
   - component: {fileID: 4811626035393404}
   m_Layer: 0
   m_Name: MCU25
-  m_TagString: Untagged
+  m_TagString: LeftHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -654,7 +655,7 @@ GameObject:
   - component: {fileID: 4765737977609744}
   m_Layer: 0
   m_Name: RokokoGuy_Spine2
-  m_TagString: Untagged
+  m_TagString: BodyCenter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1195,7 +1196,7 @@ GameObject:
   - component: {fileID: 4351862773184900}
   m_Layer: 0
   m_Name: RokokoGuy_RightHeel
-  m_TagString: Untagged
+  m_TagString: RightFoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1285,7 +1286,7 @@ GameObject:
   - component: {fileID: 4728987273207824}
   m_Layer: 0
   m_Name: RokokoGuy_LeftHeel
-  m_TagString: Untagged
+  m_TagString: LeftFoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1732,7 +1733,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1236357028541834}
   m_LocalRotation: {x: 0.000000021855694, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.4382081, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4514858106559262}
@@ -2626,7 +2627,7 @@ Animator:
   m_GameObject: {fileID: 1236357028541834}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 05dd129ccfa02f74080141b77ad659cd, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5f712ce5205425a4a916762399e06c9e, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -2634,13 +2635,14 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114184456833210974
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1236357028541834}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 33807172, guid: 595a313eb2195f244982a4cc42e699c4, type: 3}
   m_Name: 
@@ -2654,14 +2656,13 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1236357028541834}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -383841817, guid: 595a313eb2195f244982a4cc42e699c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   HubID: 
   autoSelect: 1
-  TTL: 2
   CurrentState:
     name: 
     sensors: []
@@ -2695,6 +2696,21 @@ MonoBehaviour:
     RightHand: {fileID: 0}
     LeftToe: {fileID: 0}
     RightToe: {fileID: 0}
+--- !u!114 &114684090788033526
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1236357028541834}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1401f3473d5595d4d9bb436726d26777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actor: {fileID: 114665989743828818}
+  HMD: {fileID: 0}
+  rotationWeight: 1
+  positionWeight: 1
 --- !u!137 &137460869246457468
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -2704,9 +2720,11 @@ SkinnedMeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 5d4d9f8d79080e546809f070f122abe1, type: 2}
   - {fileID: 2100000, guid: f441097394e922846b417843fe6f73c3, type: 2}
@@ -2720,6 +2738,7 @@ SkinnedMeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
