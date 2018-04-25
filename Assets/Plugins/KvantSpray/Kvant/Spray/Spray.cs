@@ -43,6 +43,11 @@ namespace Kvant
             set { _emitterSize = value; }
         }
 
+        public void SetEmitterSize(Vector3 newSize)
+        {
+            _emitterSize = newSize;
+        }
+
         [SerializeField, Range(0, 1)]
         float _throttle = 1.0f;
 

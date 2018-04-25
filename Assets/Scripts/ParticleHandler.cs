@@ -10,7 +10,7 @@ public class ParticleHandler : MonoBehaviour
 
     private Transform _rightHand, _leftHand, _bodyCenter, _leftFoot, _rightFoot, _particleCenter, _emitter;
     public float _rightHandToBody, _leftHandToBody, _rightHandToFoot, _leftHandToFoot, _sprayWidth;
-    private Vector3 _tmpRightHandPos, _tmpDirection;
+    private Vector3 _tmpRightHandPos, _tmpDirection, _emitterWidth;
 
 
     void Start ()
@@ -25,6 +25,7 @@ public class ParticleHandler : MonoBehaviour
         _leftFoot = GameObject.FindGameObjectWithTag("LeftFoot").transform;
 
 	    _particleCenter.position = _emitter.position;
+	   
     }
 
     void FixedUpdate()
@@ -43,9 +44,8 @@ public class ParticleHandler : MonoBehaviour
 
         //width of spray
         _sprayWidth = Vector3.Distance(_leftHand.position, _rightHand.position);
-        //KSpray.emitterSize.Set(_sprayWidth,0.2f,0.1f);
-        KSpray.emitterSize.Set(0.3f, 0.3f, 0.3f);
-        Debug.Log(KSpray.emitterSize);
+        _emitterWidth = new Vector3(_sprayWidth,0.1f,0.1f);
+        KSpray.SetEmitterSize(_emitterWidth);
     }
 
     void OnDrawGizmos()
