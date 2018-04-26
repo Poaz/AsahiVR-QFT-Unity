@@ -9,6 +9,13 @@ TagManager:
   - BodyCenter
   - LeftFoot
   - RightFoot
+  - LeftHand
+  - Emitter
+  - RightHand2
+  - LeftHand2
+  - LeftFoot2
+  - RightFoot2
+  - BodyCenter2
   layers:
   - Default
   - TransparentFX
