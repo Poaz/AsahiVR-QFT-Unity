@@ -113,6 +113,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &36137043 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4673261687053698, guid: 64bf992e5b0823d40a3e5421dc5d0ba3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1425419387}
 --- !u!1 &192038148
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +130,7 @@ GameObject:
   - component: {fileID: 192038150}
   m_Layer: 0
   m_Name: QuaternionCorrelation
-  m_TagString: Untagged
+  m_TagString: Correlation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,8 +159,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71e549e923f4eb348a306dac7bd163a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand_L: {fileID: 0}
+  hand_L: {fileID: 1262684769}
   hand_R: {fileID: 0}
+  ActorHand_L: {fileID: 1262684769}
+  ActorHand_R: {fileID: 0}
+  highestValues: []
+  lagIndex: 
 --- !u!114 &192038151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,6 +401,11 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!4 &672544434 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4482038593534930, guid: 64bf992e5b0823d40a3e5421dc5d0ba3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1425419387}
 --- !u!1 &728094725
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,7 +688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 051131338091a4b3d861d193e64fb704, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxParticles: 10000
+  _maxParticles: 15360
   _emitterCenter: {x: 0, y: 0, z: 0}
   _emitterSize: {x: 100, y: 0.1, z: 100}
   _throttle: 1
@@ -716,6 +730,25 @@ Transform:
   m_Father: {fileID: 2113983718}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &882518237 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4811626035393404, guid: 64bf992e5b0823d40a3e5421dc5d0ba3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1425419387}
+--- !u!4 &1156715212 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4793403648955324, guid: 64bf992e5b0823d40a3e5421dc5d0ba3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1425419387}
+--- !u!4 &1262684769 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400020, guid: c444d0d2ecd490642a7ec339ee144f07, type: 3}
+  m_PrefabInternal: {fileID: 637377117}
+--- !u!4 &1420613266 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4765737977609744, guid: 64bf992e5b0823d40a3e5421dc5d0ba3,
+    type: 2}
+  m_PrefabInternal: {fileID: 1425419387}
 --- !u!1001 &1425419387
 Prefab:
   m_ObjectHideFlags: 0
@@ -1077,6 +1110,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   KSpray: {fileID: 0}
+  _rightHand: {fileID: 1156715212}
+  _leftHand: {fileID: 882518237}
+  _bodyCenter: {fileID: 1420613266}
+  _leftFoot: {fileID: 672544434}
+  _rightFoot: {fileID: 36137043}
+  _particleCenter: {fileID: 0}
+  _emitter: {fileID: 0}
   _rightHandToBody: 0
   _leftHandToBody: 0
   _rightHandToFoot: 0

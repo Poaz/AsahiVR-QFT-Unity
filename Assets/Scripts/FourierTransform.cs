@@ -225,8 +225,8 @@ namespace AForge.Math
 						Complex	ce = data[even];
 						Complex	co = data[odd];
 
-						double	tr = co.Re * t.Re - co.Im * t.Im;
-						double	ti = co.Re * t.Im + co.Im * t.Re;
+						double	tr = (co.Re * t.Re) - (co.Im * t.Im);
+						double	ti = (co.Re * t.Im) + (co.Im * t.Re);
 
 						data[even].Re += tr;
 						data[even].Im += ti;

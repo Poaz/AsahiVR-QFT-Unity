@@ -16,6 +16,7 @@ TagManager:
   - LeftFoot2
   - RightFoot2
   - BodyCenter2
+  - Correlation
   layers:
   - Default
   - TransparentFX
