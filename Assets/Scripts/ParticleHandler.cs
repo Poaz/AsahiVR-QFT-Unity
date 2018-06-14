@@ -16,7 +16,8 @@ public class ParticleHandler : MonoBehaviour
     public Vector3 _handAcceleration;
     private Material _sprayMaterial;
     private Color _color;
-
+    public float amplitude;
+    public float lag;
     void Start ()
 	{
 	    KSpray = GameObject.FindGameObjectWithTag("Spray").GetComponent<Spray>();
@@ -36,7 +37,7 @@ public class ParticleHandler : MonoBehaviour
 
         _lastHandPos = Vector3.zero;
 
-        _particleCenter.position = _emitter.position;
+        //_particleCenter.position = _emitter.position;
 
 	    _tmpRightHandPos = transform.position;
 	}
@@ -44,7 +45,9 @@ public class ParticleHandler : MonoBehaviour
     void FixedUpdate()
     {
         //Amplitude control by the lagIndex, normalized between 0 and 1.
-        KSpray.noiseAmplitude = (Correlation.lagIndex[Correlation.lagIndex.Count-1]/-2048)+1;
+        lag = Correlation.lagIndex[Correlation.lagIndex.Count - 1];
+        amplitude = (lag/-2048) + 1;
+        KSpray.noiseAmplitude = amplitude;
  
         //Direction of spray controlled by hand positions in relation to bodycenter
         _tmpDirection = (_rightHand.position + _leftHand.position) / 2 - _bodyCenter.position;

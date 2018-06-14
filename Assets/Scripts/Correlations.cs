@@ -72,7 +72,7 @@ public class Correlations : MonoBehaviour {
             results_HandLeft = QuaternionFFT.QuaternionFourierTransform(512, 2, QHandLeft_real, QHandLeft_i, QHandLeft_j, QHandLeft_k, false);
             results_HandLeft_Actor = QuaternionFFT.QuaternionFourierTransform(512, 2, QHandLeft_Actor_real, QHandLeft_Actor_i, QHandLeft_Actor_j, QHandLeft_Actor_k, false);
             //MeanMagnitude();
-            CorrelationCalc(results_HandLeft, results_HandLeft_Actor);
+            CorrelationCalc(results_HandLeft_Actor, results_HandLeft);
             RotateByN();
             CalcMagnitude();
             LargestIndex();
